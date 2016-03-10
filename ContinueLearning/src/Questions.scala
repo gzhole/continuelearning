@@ -162,7 +162,7 @@ object Question12 {
 
   }
   def decode1[A](ls: List[(Int, A)]): List[A] =
-    ls flatMap { e => List.make(e. _1, e. _2) }
+    ls flatMap { e => List.fill(e. _1) (e. _2) }
 }
 
 object Question13 {
@@ -173,7 +173,7 @@ object Question14 {
   //Duplicate the elements of a list.
   //scala> duplicate(List('a, 'b, 'c, 'c, 'd))
   //res0: List[Symbol] = List('a, 'a, 'b, 'b, 'c, 'c, 'c, 'c, 'd, 'd) 
-  def duplicate[T](xs: List[T]): List[T] = xs flatMap (x => List.make( 2, x))
+  def duplicate[T](xs: List[T]): List[T] = xs flatMap (x => List.fill( 2) (x))
   def duplicate1[A](ls: List[A]): List[A] = ls flatMap { e => List(e, e) }
 }
 
@@ -181,7 +181,7 @@ object Question15 {
   //Duplicate the elements of a list a given number of times.
   // duplicateN(3, List('a, 'b, 'c, 'c, 'd))
   //res0: List[Symbol] = List('a, 'a, 'a, 'b, 'b, 'b, 'c, 'c, 'c, 'c, 'c, 'c, 'd, 'd, 'd)
-  def duplicateN[T](n: Int, xs: List[T]): List[T] = xs flatMap (x => List.make(n, x))
+  def duplicateN[T](n: Int, xs: List[T]): List[T] = xs flatMap (x => List.fill(n)( x))
 }
 
 object Question16 {
